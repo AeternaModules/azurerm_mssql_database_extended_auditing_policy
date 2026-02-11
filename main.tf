@@ -1,5 +1,5 @@
-resource "azurerm_mssql_database_extended_auditing_policy" "mssql_database_extended_auditing_policys" {
-  for_each = var.mssql_database_extended_auditing_policys
+resource "azurerm_mssql_database_extended_auditing_policy" "mssql_database_extended_auditing_policies" {
+  for_each = var.mssql_database_extended_auditing_policies
 
   database_id                             = each.value.database_id
   enabled                                 = each.value.enabled
