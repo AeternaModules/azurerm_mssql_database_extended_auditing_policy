@@ -1,3 +1,7 @@
+output "mssql_database_extended_auditing_policies_id" {
+  description = "Map of id values across all mssql_database_extended_auditing_policies, keyed the same as var.mssql_database_extended_auditing_policies"
+  value       = { for k, v in azurerm_mssql_database_extended_auditing_policy.mssql_database_extended_auditing_policies : k => v.id }
+}
 output "mssql_database_extended_auditing_policies_database_id" {
   description = "Map of database_id values across all mssql_database_extended_auditing_policies, keyed the same as var.mssql_database_extended_auditing_policies"
   value       = { for k, v in azurerm_mssql_database_extended_auditing_policy.mssql_database_extended_auditing_policies : k => v.database_id }
