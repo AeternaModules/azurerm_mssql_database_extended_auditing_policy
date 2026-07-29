@@ -2,6 +2,10 @@ output "mssql_database_extended_auditing_policies_id" {
   description = "Map of id values across all mssql_database_extended_auditing_policies, keyed the same as var.mssql_database_extended_auditing_policies"
   value       = { for k, v in azurerm_mssql_database_extended_auditing_policy.mssql_database_extended_auditing_policies : k => v.id if v.id != null && length(v.id) > 0 }
 }
+output "mssql_database_extended_auditing_policies_blob_storage_endpoint" {
+  description = "Map of blob_storage_endpoint values across all mssql_database_extended_auditing_policies, keyed the same as var.mssql_database_extended_auditing_policies"
+  value       = { for k, v in azurerm_mssql_database_extended_auditing_policy.mssql_database_extended_auditing_policies : k => v.blob_storage_endpoint if v.blob_storage_endpoint != null && length(v.blob_storage_endpoint) > 0 }
+}
 output "mssql_database_extended_auditing_policies_database_id" {
   description = "Map of database_id values across all mssql_database_extended_auditing_policies, keyed the same as var.mssql_database_extended_auditing_policies"
   value       = { for k, v in azurerm_mssql_database_extended_auditing_policy.mssql_database_extended_auditing_policies : k => v.database_id if v.database_id != null && length(v.database_id) > 0 }
@@ -26,9 +30,5 @@ output "mssql_database_extended_auditing_policies_storage_account_access_key" {
 output "mssql_database_extended_auditing_policies_storage_account_access_key_is_secondary" {
   description = "Map of storage_account_access_key_is_secondary values across all mssql_database_extended_auditing_policies, keyed the same as var.mssql_database_extended_auditing_policies"
   value       = { for k, v in azurerm_mssql_database_extended_auditing_policy.mssql_database_extended_auditing_policies : k => v.storage_account_access_key_is_secondary if v.storage_account_access_key_is_secondary != null }
-}
-output "mssql_database_extended_auditing_policies_storage_endpoint" {
-  description = "Map of storage_endpoint values across all mssql_database_extended_auditing_policies, keyed the same as var.mssql_database_extended_auditing_policies"
-  value       = { for k, v in azurerm_mssql_database_extended_auditing_policy.mssql_database_extended_auditing_policies : k => v.storage_endpoint if v.storage_endpoint != null && length(v.storage_endpoint) > 0 }
 }
 
